@@ -225,7 +225,7 @@ def getBoxes(
             linkmap, thresh=link_threshold, maxval=1, type=cv2.THRESH_BINARY
         )
         n_components, labels, stats, _ = cv2.connectedComponentsWithStats(
-            np.clip(text_score + link_score, 0, 1).astype("uint8"), connectivity=4
+            np.clip(text_score + link_score, 0, 1).astype("uint8")
         )
         boxes = []
         for component_id in range(1, n_components):
